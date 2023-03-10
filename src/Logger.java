@@ -3,12 +3,9 @@ import java.io.FileOutputStream;
 import java.util.Date;
 
 public class Logger {
-    private String path;
-    private FileOutputStream logs;
+    private final FileOutputStream logs;
     public Logger(String path) throws Exception {
-        this.path = path;
-        FileOutputStream fs = new FileOutputStream(path);
-        logs = fs;
+        logs = new FileOutputStream(path);
     }
     public void log(String message) throws Exception {
         message = new Date() + " [INFO] " + message + "\n";
